@@ -8,11 +8,11 @@ project(SWireEngine)
 cmake_minimum_required(VERSION 2.6)
 
 # Find the Avogadro library if it is installed
-find_package(Avogadro)
+find_package(Avogadro REQUIRED)
+# Set up the build environment
+include(${Avogadro_USE_FILE})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-if(Avogadro_FOUND)
-  include(${Avogadro_USE_FILE})
-  include_directories(${CMAKE_CURRENT_BINARY_DIR})
-  avogadro_plugin(swireengine swireengine.cpp)
-endif(Avogadro_FOUND)
+# Build your plugin using the default options
+avogadro_plugin(swireengine swireengine.cpp)
 
