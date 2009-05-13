@@ -8,7 +8,7 @@ project(SWireEngine)
 cmake_minimum_required(VERSION 2.6)
 
 # Find the Avogadro library if it is installed
-find_package(Avogadro REQUIRED)
+find_package(Avogadro 0.9.4 REQUIRED)
 # Set up the build environment
 include(${Avogadro_USE_FILE})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
